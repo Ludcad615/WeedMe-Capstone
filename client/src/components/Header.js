@@ -7,11 +7,11 @@ function Header() {
   return (
     <header href="#">
       <h1>
-        Higher Ground  
+        WeedMe  
         {/* <span className="logo" role="img">
           🖼
         </span> */}
-        <img width="150" src="https://user-images.githubusercontent.com/101995433/175654971-df5aeddd-9db6-43bf-b03d-588b69f53057.png"></img>
+        <img width="150" src="https://thumbs.dreamstime.com/b/cannabis-leaf-vector-illustration-icon-design-marijuana-logo-medical-pharmacy-industry-stamp-oil-retro-indica-vintage-set-158983941.jpg"></img>
       </h1>
     </header>
   );
@@ -19,3 +19,4 @@ function Header() {
 }
 
 export default Header
+

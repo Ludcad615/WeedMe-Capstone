@@ -80,7 +80,7 @@ div h3 {
 .logo {
   font-size: 1.25em;
   padding-left: 0.5rem;
-  /* color: transparent; */
+  color: transparent;
   text-shadow: 0 0 0 var(--blue);
 }
 
@@ -162,11 +162,11 @@ input:focus {
   }
 }
 
-@media (min-width: 1200px) {
+ @media (min-width: 1200px) {
   .card {
     width: calc(25% - 2rem);
   }
-}
+} 
 
 .add-artwork {
   font-family: 'Inconsolata', monospace;
@@ -174,4 +174,4 @@ input:focus {
 
 .artwork-form {
   font-family: 'Inconsolata', monospace;
-}
+} 
