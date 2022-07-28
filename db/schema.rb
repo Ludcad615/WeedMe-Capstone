@@ -16,13 +16,11 @@ ActiveRecord::Schema.define(version: 2022_07_21_165300) do
   enable_extension "plpgsql"
 
   create_table "reviews", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "strain_id", null: false
+    t.integer "user_id"
+    t.integer "strain_id"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["strain_id"], name: "index_reviews_on_strain_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "strains", force: :cascade do |t|
@@ -44,6 +42,4 @@ ActiveRecord::Schema.define(version: 2022_07_21_165300) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "reviews", "strains"
-  add_foreign_key "reviews", "users"
 end

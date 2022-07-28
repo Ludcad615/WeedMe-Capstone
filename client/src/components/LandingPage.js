@@ -3,14 +3,14 @@ import SignupForm from './SignupForm'
 import LoginForm from './LoginForm'
 import "../styles/signUpLoginPage.css"
 
-const LandingPage = () => {
-    const [showLogin, setShowLogin] = useState(true);
+const LandingPage = ({ fetchUser }) => {
+  const [showLogin, setShowLogin] = useState(true);
   return (
     <div className="signUpLoginPage-wrapper">
       {showLogin ? (
         <div className="signUpLoginPage-wrapper_content">
-          <h1>Welcome Back!</h1>
-          <LoginForm  />
+          <h2>Welcome to WeedMe!</h2>
+          <LoginForm fetchUser={fetchUser} />
           <p>Don't have an Account?</p>
           <button id="sign-log-btn" onClick={() => setShowLogin(false)}>
             Sign up!
@@ -19,7 +19,7 @@ const LandingPage = () => {
       ) : (
         <div className="signUpLoginPage-wrapper_content">
           <h1>Sign Up Below!</h1>
-          <SignupForm  />
+          <SignupForm fetchUser={fetchUser} />
           <p>Already have an account?</p>
           <button id="sign-log-btn" onClick={() => setShowLogin(true)}>
             Login!
@@ -27,7 +27,7 @@ const LandingPage = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
 export default LandingPage

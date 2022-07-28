@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import {useNavigate} from "react-router-dom"
 
-const SignupForm = () => {
+const SignupForm = ({ fetchUser }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
@@ -9,15 +10,16 @@ const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState([]);
+  let navigate = useNavigate();
 
   const resetState = () => {
-    setFirstName("")
-    setLastName("")
-    setUsername("")
-    setPassword("")
-    setPasswordConfirmation("")
-    setEmail("")
-}
+    setFirstName("");
+    setLastName("");
+    setUsername("");
+    setPassword("");
+    setPasswordConfirmation("");
+    setEmail("");
+  };
 
   function handleSignup(e) {
     e.preventDefault();
@@ -36,19 +38,18 @@ const SignupForm = () => {
         password_confirmation: passwordConfirmation,
         email: email,
       }),
-    })
-    .then((r) => {
+    }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => console.log(user));
+        fetchUser()
+        navigate("/home");
       } else {
         r.json().then((error) => setErrors(error.errors));
       }
     });
     resetState();
-    
   }
-  
+
   return (
     <div className="signup">
       <form onSubmit={handleSignup}>
@@ -110,7 +111,7 @@ const SignupForm = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default SignupForm

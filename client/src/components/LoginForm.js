@@ -4,13 +4,12 @@ import "../styles/login.css"
 import "../styles/signup.css"
 
 
-const LoginForm = () => {
+const LoginForm = ({ fetchUser }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLogginIn, setIsLogginIn] = useState(false);
-  let navigate = useNavigate()
-
+  let navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,15 +24,14 @@ const LoginForm = () => {
       setIsLogginIn(false);
       if (r.ok) {
         r.json().then((user) => {
+          fetchUser()
           navigate("/home");
-          console.log(user);
         });
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
     });
   }
-
 
   return (
     <div className="login">
@@ -62,7 +60,7 @@ const LoginForm = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default LoginForm

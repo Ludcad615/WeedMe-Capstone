@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { NavLink } from "react-router-dom"
+import { Button, Space, Group} from "@mantine/core"
 
 function NavBar() {
   let navigate = useNavigate()
@@ -17,31 +18,24 @@ function NavBar() {
   }
 
   return (
-    <nav>
-      <div>
-      <NavLink to="/home">
-              <button className="btn text-dark">
-                Home
-                </button>
+    <>
+  <Group position="apart">
+    <NavLink to="/home">
+       <Button >
+          Home
+        </Button>
       </NavLink>
-     
-      <NavLink to="/reviews=" >
-            <button className="btn text-dark"> 
-            Reviews
-            </button>
+      <NavLink to="/reviews" >
+       <Button> 
+         Reviews
+       </Button>
       </NavLink>
-      <NavLink to="/about">
-              <button className="btn text-dark">
-                About
-                </button>
-      </NavLink>
-       
-              <button onClick={handleLogOut} className="btn text-dark">
+              <Button onClick={handleLogOut} >
                 Log Out
-                </button>
-      
-      </div>
-    </nav>
+                </Button>
+   </Group>
+   <Space h="md"/>
+    </>
   )
 }
 export default NavBar
