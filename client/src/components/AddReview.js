@@ -4,33 +4,36 @@ import { Button, Space, Modal, Group, Textarea } from "@mantine/core";
 
 
 
-const AddReview = ({ strains, names, setStrains, strainId, currentUser }) => {
+const AddReview = ({ strains, names, setStrains, strainId, currentUser, getStrains }) => {
   // const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState(""); //stands for review dont get confused i fucked up
   const [opened, setOpened] = useState(false);
   console.log("currentUser",currentUser)
 
   function handleSubmit(e) {
     e.preventDefault(); 
-    //prevent page from refreshing
-    //fetch request with POST
-    fetch(`/reviews`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        //post user_id
-        //get the user after i log in pass it downt o this components
-        user_id: currentUser.id,
-        strain_id: strainId,
-        description: comment,
-      }),
-    })
-      .then((response) => response.json())
-      .then((res) => console.log(res));
-    // //add new artwork to page
+    postReview();
+    getStrains();
   }
+
+  function postReview() {
+   fetch(`/reviews`, {
+     method: "POST",
+     headers: {
+       "Content-type": "application/json",
+     },
+     body: JSON.stringify({
+       //post user_id
+       //get the user after i log in pass it downt o this components
+       user_id: currentUser.id,
+       strain_id: strainId,
+       description: comment,
+     }),
+   })
+     .then((response) => response.json())
+     .then((res) => console.log(res)); 
+  }
+
 
   return (
     <>

@@ -10,6 +10,7 @@ const ReviewsBox = ({
   reviewId,
   currentUser,
   strainId,
+  getStrains
 }) => {
   const handleDelete = () => {
     // setting id variable to review id onclick
@@ -24,6 +25,12 @@ const ReviewsBox = ({
     });
   };
 
+  function handleDeleteComment(){
+    handleDelete();
+    getStrains();
+  
+  }
+
   return (
     <>
       <div style={{ width: 240, marginLeft: "auto", marginRight: "auto" }}>
@@ -37,8 +44,9 @@ const ReviewsBox = ({
               currentUser={currentUser}
               reviewId={reviewId}
               strainId={strainId}
+              getStrains={getStrains}
             />
-            <Button variant="gradient" onClick={handleDelete}>
+            <Button variant="gradient" onClick={handleDeleteComment}>
               Delete Review
             </Button>
           </Group>

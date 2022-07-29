@@ -4,7 +4,7 @@ import ReviewsBox from "./ReviewsBox";
 import { SimpleGrid } from "@mantine/core";
 import AddReview from "./AddReview";
 
-function StrainReviews({ weedstrains,currentUser }) {
+function StrainReviews({ weedstrains, currentUser, getStrains }) {
   const reviews = weedstrains.map((strain) => {
     let title = strain.strain_name;
     let image = strain.image;
@@ -25,6 +25,7 @@ function StrainReviews({ weedstrains,currentUser }) {
           reviewId={reviewId}
           strainId={strainId}
           currentUser={currentUser}
+          getStrains={getStrains}
         />
       </div>
     );

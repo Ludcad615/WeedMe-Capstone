@@ -44,6 +44,7 @@ function App() {
             <StrainReviews
               weedstrains={weedstrains}
               currentUser={currentUser}
+              getStrains={getStrains}
             />
           }
         />
