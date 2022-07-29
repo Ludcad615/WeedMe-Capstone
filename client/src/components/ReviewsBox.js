@@ -39,7 +39,7 @@ const ReviewsBox = ({
               strainId={strainId}
             />
             <Button variant="gradient" onClick={handleDelete}>
-              Delete
+              Delete Review
             </Button>
           </Group>
         </Paper>

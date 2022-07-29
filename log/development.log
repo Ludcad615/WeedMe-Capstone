@@ -26775,3 +26775,1749 @@ Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 2070)
 Completed 200 OK in 30ms (Views: 19.8ms | ActiveRecord: 10.0ms | Allocations: 16975)
 
 
+Started GET "/me" for 127.0.0.1 at 2022-07-28 21:45:07 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-28 21:45:07 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 35ms (Views: 4.0ms | ActiveRecord: 4.3ms | Allocations: 10470)
+
+
+  [1m[36mStrain Load (0.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.12ms)
+Completed 200 OK in 104ms (Views: 80.7ms | ActiveRecord: 20.1ms | Allocations: 34553)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-28 21:45:38 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"LC15", "password"=>"[FILTERED]", "session"=>{"username"=>"LC15", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LC15"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms | Allocations: 683)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+Started POST "/login" for 127.0.0.1 at 2022-07-28 21:45:42 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"LC15", "password"=>"[FILTERED]", "session"=>{"username"=>"LC15", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LC15"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms | Allocations: 543)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+Started GET "/strains" for 127.0.0.1 at 2022-07-28 21:45:46 -0400
+Processing by StrainsController#index as */*
+Started GET "/me" for 127.0.0.1 at 2022-07-28 21:45:46 -0400
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.7ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize rendered or redirected
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+Completed 401 Unauthorized in 7ms (Views: 1.7ms | ActiveRecord: 2.0ms | Allocations: 2984)
+
+
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.95ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 2.6ms | Allocations: 17018)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-28 21:45:59 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Afally125", "password"=>"[FILTERED]", "session"=>{"username"=>"Afally125", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Afally125"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 290ms (Views: 2.0ms | ActiveRecord: 2.9ms | Allocations: 4141)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-28 21:45:59 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 990)
+
+
+Started DELETE "/reviews/2" for 127.0.0.1 at 2022-07-28 21:50:31 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 1.9ms | Allocations: 2011)
+
+
+Started DELETE "/reviews/2" for 127.0.0.1 at 2022-07-28 21:50:33 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 504)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=2):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started DELETE "/reviews/2" for 127.0.0.1 at 2022-07-28 21:50:33 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms | Allocations: 503)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=2):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started DELETE "/reviews/2" for 127.0.0.1 at 2022-07-28 21:50:33 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 503)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=2):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 08:41:06 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 08:41:06 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mStrain Load (1.0ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+Completed 200 OK in 56ms (Views: 1.1ms | ActiveRecord: 18.8ms | Allocations: 8666)
+
+
+[active_model_serializers]   [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.96ms)
+Completed 200 OK in 73ms (Views: 72.4ms | ActiveRecord: 20.5ms | Allocations: 22493)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 08:41:21 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "strain_id"=>2, "description"=>"jgjhghjg", "review"=>{"user_id"=>2, "strain_id"=>2, "description"=>"jgjhghjg"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mStrain Load (0.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (4.8ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["strain_id", 2], ["description", "jgjhghjg"], ["created_at", "2022-07-29 12:41:21.247297"], ["updated_at", "2022-07-29 12:41:21.247297"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 201 Created in 23ms (Views: 0.9ms | ActiveRecord: 6.5ms | Allocations: 4117)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 08:41:24 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 08:41:24 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (1.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+[active_model_serializers]   [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 1.1ms | Allocations: 2106)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.88ms)
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 5.8ms | Allocations: 16758)
+
+
+Started DELETE "/reviews/13" for 127.0.0.1 at 2022-07-29 08:41:25 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 1.4ms | Allocations: 1855)
+
+
+Started DELETE "/reviews/13" for 127.0.0.1 at 2022-07-29 08:41:26 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms | Allocations: 503)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=13):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started DELETE "/reviews/13" for 127.0.0.1 at 2022-07-29 08:43:11 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 502)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=13):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started DELETE "/reviews/13" for 127.0.0.1 at 2022-07-29 08:43:11 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 503)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=13):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started DELETE "/reviews/13" for 127.0.0.1 at 2022-07-29 08:43:11 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 502)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=13):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started DELETE "/reviews/13" for 127.0.0.1 at 2022-07-29 08:43:11 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 502)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=13):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 08:44:51 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 08:44:51 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 2100)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.18ms)
+Completed 200 OK in 29ms (Views: 22.7ms | ActiveRecord: 5.4ms | Allocations: 16628)
+
+
+Started DELETE "/reviews/3" for 127.0.0.1 at 2022-07-29 08:44:58 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 11ms (Views: 1.1ms | ActiveRecord: 3.1ms | Allocations: 1853)
+
+
+Started DELETE "/reviews/3" for 127.0.0.1 at 2022-07-29 09:11:24 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 100ms (ActiveRecord: 30.4ms | Allocations: 3705)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=3):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 09:11:26 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 09:11:26 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (13.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.86ms)
+Completed 200 OK in 48ms (Views: 26.3ms | ActiveRecord: 20.9ms | Allocations: 18718)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 25.8ms | Allocations: 19426)
+
+
+Started DELETE "/reviews/undefined" for 127.0.0.1 at 2022-07-29 09:11:27 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 529)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=undefined):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-29 09:11:43 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+Completed 204 No Content in 4ms (ActiveRecord: 0.3ms | Allocations: 619)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 09:11:47 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 09:11:47 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.9ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 2.4ms | ActiveRecord: 1.5ms | Allocations: 3024)
+
+
+[active_model_serializers]   [1m[36mReview Load (7.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.4ms)
+Completed 200 OK in 45ms (Views: 28.9ms | ActiveRecord: 16.4ms | Allocations: 16745)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-29 09:11:52 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"LC15", "password"=>"[FILTERED]", "session"=>{"username"=>"LC15", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LC15"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 529)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+Started POST "/login" for 127.0.0.1 at 2022-07-29 09:12:07 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Afally125", "password"=>"[FILTERED]", "session"=>{"username"=>"Afally125", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Afally125"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 289ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 885)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-29 09:12:07 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 863)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 09:12:28 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "strain_id"=>2, "description"=>"jhbjbvjv", "review"=>{"user_id"=>2, "strain_id"=>2, "description"=>"jhbjbvjv"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mStrain Load (5.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (5.8ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["strain_id", 2], ["description", "jhbjbvjv"], ["created_at", "2022-07-29 13:12:28.372096"], ["updated_at", "2022-07-29 13:12:28.372096"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 201 Created in 25ms (Views: 0.7ms | ActiveRecord: 12.0ms | Allocations: 3512)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 09:12:30 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 09:12:30 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mStrain Load (1.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+[active_model_serializers]   [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 2.0ms | Allocations: 2207)
+
+
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (16.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (3.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (61.63ms)
+Completed 200 OK in 67ms (Views: 41.8ms | ActiveRecord: 25.3ms | Allocations: 16455)
+
+
+Started DELETE "/reviews/15" for 127.0.0.1 at 2022-07-29 09:12:35 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (0.6ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 4.8ms | Allocations: 1852)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 09:13:25 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "description"=>"kjbn,nb", "review"=>{"user_id"=>2, "description"=>"kjbn,nb"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Entity in 20ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 4939)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-29 09:13:33 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 09:13:33 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mStrain Load (0.7ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+[active_model_serializers]   [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+Completed 200 OK in 11ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 2405)
+
+
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (13.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (6.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (3.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (52.77ms)
+Completed 200 OK in 60ms (Views: 27.9ms | ActiveRecord: 31.7ms | Allocations: 16334)
+
+
+Started DELETE "/reviews/16" for 127.0.0.1 at 2022-07-29 10:10:43 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 32ms (Views: 0.8ms | ActiveRecord: 7.9ms | Allocations: 5026)
+
+
+Started DELETE "/reviews/16" for 127.0.0.1 at 2022-07-29 10:10:43 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 503)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=16):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:10:58 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:10:58 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 2.8ms | Allocations: 1211)
+
+
+  [1m[36mStrain Load (6.6ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (3.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (25.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (8.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (58.73ms)
+Completed 200 OK in 131ms (Views: 41.1ms | ActiveRecord: 90.0ms | Allocations: 19356)
+
+
+Started DELETE "/reviews/undefined" for 127.0.0.1 at 2022-07-29 10:11:00 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 507)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=undefined):
+  
+app/controllers/reviews_controller.rb:24:in `destroy'
+Started DELETE "/reviews/undefined" for 127.0.0.1 at 2022-07-29 10:12:43 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-29 10:16:29 -0400
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-29 10:16:29 -0400
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+Completed 404 Not Found in 226420ms (ActiveRecord: 31.0ms | Allocations: 75203)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=undefined):
+  
+app/controllers/reviews_controller.rb:25:in `destroy'
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-29 10:16:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started DELETE "/reviews/" for 127.0.0.1 at 2022-07-29 10:16:43 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/reviews"):
+  
+Started DELETE "/reviews/" for 127.0.0.1 at 2022-07-29 10:17:16 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/reviews"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:17:25 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:17:25 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (17.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.13ms)
+Completed 200 OK in 55ms (Views: 3.2ms | ActiveRecord: 28.2ms | Allocations: 12397)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (6.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (45.51ms)
+Completed 200 OK in 98ms (Views: 67.3ms | ActiveRecord: 25.5ms | Allocations: 31193)
+
+
+Started DELETE "/reviews/" for 127.0.0.1 at 2022-07-29 10:17:32 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/reviews"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:24:51 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:24:51 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mStrain Load (1.0ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 120ms (Views: 0.9ms | ActiveRecord: 19.1ms | Allocations: 8654)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (16.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (67.77ms)
+Completed 200 OK in 180ms (Views: 176.7ms | ActiveRecord: 50.7ms | Allocations: 22243)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 10:39:45 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "strain_id"=>2, "description"=>"sfkjasdfh", "review"=>{"user_id"=>2, "strain_id"=>2, "description"=>"sfkjasdfh"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mStrain Load (0.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (6.6ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["strain_id", 2], ["description", "sfkjasdfh"], ["created_at", "2022-07-29 14:39:45.419151"], ["updated_at", "2022-07-29 14:39:45.419151"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+Completed 201 Created in 32ms (Views: 0.7ms | ActiveRecord: 16.5ms | Allocations: 7108)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:39:48 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:39:48 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.64ms)
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 5.3ms | Allocations: 18927)
+
+
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 33ms (Views: 0.6ms | ActiveRecord: 14.5ms | Allocations: 19399)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 10:39:56 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "strain_id"=>3, "description"=>"uytfyuygjh", "review"=>{"user_id"=>2, "strain_id"=>3, "description"=>"uytfyuygjh"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mStrain Load (0.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (1.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["strain_id", 3], ["description", "uytfyuygjh"], ["created_at", "2022-07-29 14:39:56.809915"], ["updated_at", "2022-07-29 14:39:56.809915"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 201 Created in 21ms (Views: 1.3ms | ActiveRecord: 8.7ms | Allocations: 3507)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:40:00 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:40:00 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+Completed 200 OK in 13ms (Views: 1.2ms | ActiveRecord: 1.1ms | Allocations: 3030)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.11ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 4.4ms | Allocations: 16632)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 10:40:05 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "strain_id"=>3, "description"=>"hgcftxdrzsrxdcfghv", "review"=>{"user_id"=>2, "strain_id"=>3, "description"=>"hgcftxdrzsrxdcfghv"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mStrain Load (6.6ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["strain_id", 3], ["description", "hgcftxdrzsrxdcfghv"], ["created_at", "2022-07-29 14:40:05.817074"], ["updated_at", "2022-07-29 14:40:05.817074"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 201 Created in 21ms (Views: 0.8ms | ActiveRecord: 8.7ms | Allocations: 3511)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:40:09 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:40:09 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mStrain Load (0.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 2954)
+
+
+[active_model_serializers]   [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.81ms)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 3.1ms | Allocations: 16754)
+
+
+Started DELETE "/reviews/20" for 127.0.0.1 at 2022-07-29 10:40:15 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"20"}
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:43:57 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:43:57 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (3.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 48ms (Views: 1.8ms | ActiveRecord: 28.2ms | Allocations: 26352)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (45.04ms)
+Completed 200 OK in 64ms (Views: 42.8ms | ActiveRecord: 17.0ms | Allocations: 37052)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-29 10:44:04 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Afally125", "password"=>"[FILTERED]", "session"=>{"username"=>"Afally125", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Afally125"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 289ms (Views: 1.7ms | ActiveRecord: 2.2ms | Allocations: 4293)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:44:04 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 992)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-29 10:47:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2022-07-29 10:47:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:47:14 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:47:14 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1199)
+
+
+  [1m[36mStrain Load (5.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (6.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.91ms)
+Completed 200 OK in 45ms (Views: 24.1ms | ActiveRecord: 20.1ms | Allocations: 16601)
+
+
+Started DELETE "/reviews/17" for 127.0.0.1 at 2022-07-29 10:48:03 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:26:in `destroy'
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/reviews_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:26:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 39401ms (Views: 1.2ms | ActiveRecord: 5.5ms | Allocations: 53567)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:49:10 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:49:10 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.23ms)
+Completed 200 OK in 47ms (Views: 3.3ms | ActiveRecord: 29.9ms | Allocations: 35104)
+
+
+Completed 200 OK in 52ms (Views: 41.4ms | ActiveRecord: 8.1ms | Allocations: 36547)
+
+
+Started DELETE "/reviews/18" for 127.0.0.1 at 2022-07-29 10:49:13 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (2.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 5.6ms | Allocations: 2094)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:49:15 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:49:15 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 2083)
+
+
+[active_model_serializers]   [1m[36mReview Load (4.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.92ms)
+Completed 200 OK in 25ms (Views: 18.4ms | ActiveRecord: 6.6ms | Allocations: 16528)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 10:51:07 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "strain_id"=>2, "description"=>"fdskjfnkdsf", "review"=>{"user_id"=>2, "strain_id"=>2, "description"=>"fdskjfnkdsf"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mStrain Load (0.7ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (1.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["strain_id", 2], ["description", "fdskjfnkdsf"], ["created_at", "2022-07-29 14:51:07.811014"], ["updated_at", "2022-07-29 14:51:07.811014"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 201 Created in 20ms (Views: 0.8ms | ActiveRecord: 3.6ms | Allocations: 4116)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:51:10 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:51:10 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 1019)
+
+
+  [1m[36mStrain Load (2.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (24.22ms)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 7.3ms | Allocations: 16483)
+
+
+Started DELETE "/reviews/19" for 127.0.0.1 at 2022-07-29 10:51:16 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (0.7ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 19]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 11ms (Views: 1.0ms | ActiveRecord: 3.2ms | Allocations: 1856)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:51:18 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:51:18 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (1.2ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 3.4ms | Allocations: 2049)
+
+
+[active_model_serializers]   [1m[36mReview Load (3.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.97ms)
+Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 7.2ms | Allocations: 16743)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:51:23 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:51:23 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 1.9ms | Allocations: 2107)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.82ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 2.8ms | Allocations: 16513)
+
+
+Started DELETE "/reviews/22" for 127.0.0.1 at 2022-07-29 10:51:24 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 22]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.4ms | Allocations: 1852)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:51:26 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:51:26 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1003)
+
+
+  [1m[36mStrain Load (3.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.31ms)
+Completed 200 OK in 26ms (Views: 20.3ms | ActiveRecord: 5.3ms | Allocations: 16214)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 10:51:32 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "strain_id"=>2, "description"=>"dfkjsdfhjsfd", "review"=>{"user_id"=>2, "strain_id"=>2, "description"=>"dfkjsdfhjsfd"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mStrain Load (3.6ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (1.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["strain_id", 2], ["description", "dfkjsdfhjsfd"], ["created_at", "2022-07-29 14:51:32.180439"], ["updated_at", "2022-07-29 14:51:32.180439"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 201 Created in 23ms (Views: 0.8ms | ActiveRecord: 9.6ms | Allocations: 3511)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-29 10:51:34 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 10:51:34 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+  [1m[36mStrain Load (2.3ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.8ms | Allocations: 1208)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.86ms)
+Completed 200 OK in 25ms (Views: 19.3ms | ActiveRecord: 5.7ms | Allocations: 16306)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-07-29 11:00:10 -0400
+Processing by SessionsController#destroy as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+Completed 204 No Content in 30ms (ActiveRecord: 5.5ms | Allocations: 3832)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 11:00:12 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 11:00:12 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (1.6ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.11ms)
+Completed 200 OK in 36ms (Views: 27.5ms | ActiveRecord: 8.6ms | Allocations: 19074)
+
+
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 36ms (Views: 0.2ms | ActiveRecord: 19.6ms | Allocations: 19478)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 11:00:43 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 11:00:43 -0400
+Processing by UsersController#show as */*
+Processing by StrainsController#index as */*
+  [1m[36mStrain Load (8.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 20ms (Views: 2.5ms | ActiveRecord: 11.1ms | Allocations: 3184)
+
+
+[active_model_serializers]   [1m[36mReview Load (2.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.7ms)
+Completed 200 OK in 33ms (Views: 19.9ms | ActiveRecord: 12.6ms | Allocations: 16286)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-07-29 11:00:53 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Afally125", "password"=>"[FILTERED]", "session"=>{"username"=>"Afally125", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Afally125"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 290ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 991)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-07-29 11:00:53 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 865)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2022-07-29 11:01:39 -0400
+Processing by ReviewsController#create as */*
+  Parameters: {"user_id"=>2, "strain_id"=>3, "description"=>"fgdffdgds", "review"=>{"user_id"=>2, "strain_id"=>3, "description"=>"fgdffdgds"}}
+[31mUnpermitted parameter: :review[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mStrain Load (0.7ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mReview Create (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["strain_id", 3], ["description", "fgdffdgds"], ["created_at", "2022-07-29 15:01:39.822794"], ["updated_at", "2022-07-29 15:01:39.822794"]]
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:18:in `create'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 201 Created in 17ms (Views: 1.0ms | ActiveRecord: 2.7ms | Allocations: 3512)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 11:01:42 -0400
+Processing by StrainsController#index as */*
+Started GET "/me" for 127.0.0.1 at 2022-07-29 11:01:42 -0400
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (1.5ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 4.1ms | Allocations: 3977)
+
+
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (17.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (7.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (50.51ms)
+Completed 200 OK in 56ms (Views: 23.4ms | ActiveRecord: 32.1ms | Allocations: 17082)
+
+
+Started DELETE "/reviews/20" for 127.0.0.1 at 2022-07-29 11:01:45 -0400
+Processing by ReviewsController#destroy as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 20]]
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 1856)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-07-29 11:01:47 -0400
+Started GET "/me" for 127.0.0.1 at 2022-07-29 11:01:47 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.7ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 2.6ms | Allocations: 2095)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (4.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.87ms)
+Completed 200 OK in 45ms (Views: 30.3ms | ActiveRecord: 14.6ms | Allocations: 16508)
+
+

@@ -12,7 +12,7 @@ function StrainReviews({ weedstrains,currentUser }) {
     let reviewId = [];
     let review = strain.reviews.map((review) => {
       reviewId.push(review.id);
-      return review.description;
+      return <p>{review.description}</p>
     });
 
     return (
