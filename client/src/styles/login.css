@@ -5,16 +5,30 @@
     align-items: center;
     width: calc(100% - 60px);
     margin: 0 auto;
+    
+    
+    
 }
+
 
 .login form input {
     width: 100%;
     padding: 15px 25px;
     margin: 10px;
+    /* background-image: radial-gradient(red, green, blue); */
+    border: 5px black groove
 }
 
 #login-btn {
-    border: none;
+    border: 5px black groove;
     padding: 15px 25px;
     margin: 15px auto;
+    
+}
+
+.login-title{
+    margin:3%;
+    font-size: 50px;
+    color: black;
+    
 }

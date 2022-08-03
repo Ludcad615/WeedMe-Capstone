@@ -24,15 +24,17 @@ const WeedCard = ({strainName, image, flowerType, description, id, reviews}) => 
           <Anchor component={Link} to="/reviews">
           <Button variant="light" color="blue" mt="md" radius="md">
             Reviews
+            
           </Button>
           </Anchor>
 
-          <Button variant="light" color="blue" mt="md" radius="md">
+          {/* <Button variant="light" color="blue" mt="md" radius="md">
             Add to Cart
-          </Button>
+          </Button> */}
         </Group>
       </Card>
     </Grid.Col>
+    
   );
 }
 

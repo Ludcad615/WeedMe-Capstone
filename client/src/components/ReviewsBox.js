@@ -15,7 +15,7 @@ const ReviewsBox = ({
   const handleDelete = () => {
     // setting id variable to review id onclick
     // write a fetch request to delete the review using the id
-    let id = reviewId[0];
+    let id = reviewId[reviewId.length - 1];
     fetch(`/reviews/${id}`, {
       method: "DELETE",
     }).then((res) => {
@@ -39,7 +39,7 @@ const ReviewsBox = ({
           <Text>{strainName}</Text>
           <Text>{description}</Text>
           <Group position={"apart"}>
-            <Button variant="gradient">Edit</Button>
+            {/* <Button variant="gradient">Edit</Button> */}
             <AddReview
               currentUser={currentUser}
               reviewId={reviewId}

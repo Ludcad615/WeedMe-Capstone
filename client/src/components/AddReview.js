@@ -4,7 +4,7 @@ import { Button, Space, Modal, Group, Textarea } from "@mantine/core";
 
 
 
-const AddReview = ({ strains, names, setStrains, strainId, currentUser, getStrains }) => {
+const AddReview = ({ strains, names, setStrains, strainId, currentUser, getStrains}) => {
   // const [name, setName] = useState("");
   const [comment, setComment] = useState(""); //stands for review dont get confused i fucked up
   const [opened, setOpened] = useState(false);
@@ -31,13 +31,15 @@ const AddReview = ({ strains, names, setStrains, strainId, currentUser, getStrai
      }),
    })
      .then((response) => response.json())
-     .then((res) => console.log(res)); 
+     .then((res) => {
+      setOpened(false);
+     }); 
   }
 
 
   return (
     <>
-      <Modal opened={opened} onClose={() => setOpened(false)}>
+      <Modal closeOnConfirm={true} opened={opened} onClose={() => setOpened(false)}>
         <form class="Weed-form" onSubmit={handleSubmit}>
           <Textarea
             placeholder="Leave a WeedMe review"

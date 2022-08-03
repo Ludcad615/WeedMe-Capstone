@@ -9,7 +9,7 @@ const LandingPage = ({ fetchUser }) => {
     <div className="signUpLoginPage-wrapper">
       {showLogin ? (
         <div className="signUpLoginPage-wrapper_content">
-          <h2>Welcome to WeedMe!</h2>
+          <h1 className="login-title">Welcome to WeedMe!</h1>
           <LoginForm fetchUser={fetchUser} />
           <p>Don't have an Account?</p>
           <button id="sign-log-btn" onClick={() => setShowLogin(false)}>

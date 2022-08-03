@@ -6,7 +6,7 @@ const HomePage = ({data}) => {
   return (
     <div>
         <div>
-            <h1>WeedMe</h1>
+            <h1 style={{fontSize:"100px", color:"white"}}>WeedMe</h1>
         </div>
         <NavBar/>
         <div>
