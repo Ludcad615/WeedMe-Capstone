@@ -41065,3 +41065,371 @@ Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 11.8ms | Allocations: 250
 Completed 200 OK in 105ms (Views: 84.2ms | ActiveRecord: 19.0ms | Allocations: 33393)
 
 
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (53.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_development"[0m
+  [1m[35m (42.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "react_rails_api_project_template_test"[0m
+  [1m[35m (110.9ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_development" ENCODING = 'unicode'[0m
+  [1m[35m (33.8ms)[0m  [1m[35mCREATE DATABASE "react_rails_api_project_template_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "user_id" integer, "strain_id" integer, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "strains" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "strains" ("id" bigserial primary key, "strain_name" character varying, "image" character varying, "description" character varying, "flower_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220721165300)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220721165239),
+(20220721165253);
+
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-14 17:46:23.612736"], ["updated_at", "2022-09-14 17:46:23.612736"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "2b9350d7f178db13aa81432eb19bba58f9c85b90"], ["created_at", "2022-09-14 17:46:23.622042"], ["updated_at", "2022-09-14 17:46:23.622042"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "user_id" integer, "strain_id" integer, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "strains" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "strains" ("id" bigserial primary key, "strain_name" character varying, "image" character varying, "description" character varying, "flower_type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220721165300)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220721165239),
+(20220721165253);
+
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-14 17:46:23.676728"], ["updated_at", "2022-09-14 17:46:23.676728"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-09-14 17:46:23.678495"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "2b9350d7f178db13aa81432eb19bba58f9c85b90"], ["created_at", "2022-09-14 17:46:23.680180"], ["updated_at", "2022-09-14 17:46:23.680180"]]
+  [1m[36mTRANSACTION (21.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrain Destroy (0.1ms)[0m  [1m[31mDELETE FROM "strains"[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mReview Destroy (0.1ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Demo User"], ["last_name", "test"], ["username", "demo1"], ["email", "test@mail.com"], ["password_digest", "$2a$12$xwi1H.7qWZdYh5/lxAM0eesSzzFQpO5Q5LwUEHOiQC.ND0/l11JPy"], ["created_at", "2022-09-14 17:46:23.995279"], ["updated_at", "2022-09-14 17:46:23.995279"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.6ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Wedding Cake"], ["image", "https://leafly-public.imgix.net/strains/photos/m2y50HYRBu0dHY4JSdSx_wedding-cake_jman.jpg"], ["description", "Wedding cake is a potent type of indica-hybrid marijuana strain made by crossing Triangle Kush with Animal Mints. Wedding Cake strain provides relaxing and euphoric effects that calm the body and mind."], ["flower_type", "Hybrid"], ["created_at", "2022-09-14 17:46:24.000951"], ["updated_at", "2022-09-14 17:46:24.000951"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "GG4 4 YAX"], ["image", "https://images.leafly.com/flower-images/gg-4.jpg"], ["description", "Gorilla Glue #4 is a potent hybrid marijuana strain that delivers heavy-handed euphoria and relaxation, leaving you feeling glued to the couch."], ["flower_type", "Hybrid"], ["created_at", "2022-09-14 17:46:24.003214"], ["updated_at", "2022-09-14 17:46:24.003214"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.1ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Snowden Runtz"], ["image", "https://highyields.com/wp-content/uploads/2021/10/runtz.jpg"], ["description", "Runtz is made by Cookies Fam by crossing  Zkittlez with Gelato and it is loved for its incredibly fruity flavor profile that smells just like a bag of the sugary candy we all know and love."], ["flower_type", "Hybrid"], ["created_at", "2022-09-14 17:46:24.005006"], ["updated_at", "2022-09-14 17:46:24.005006"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.1ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Dosidos"], ["image", "https://leafly-public.imgix.net/strains/reviews/photos/do-si-dos__primary_d9be.jpg"], ["description", "Similar to its parent, OGKB, a GSC-phenotype. With glittering trichomes, bright pistils, and lime green and lavender leaves, Dosidos weed is a feast for the eyes. Its aroma is pungent, sweet, and earthy with slight floral funkiness. These classic OG aromas blend nicely with medical-grade body effects that lean toward the sedative side with the addition of Face Off OG genetics."], ["flower_type", "Hybrid"], ["created_at", "2022-09-14 17:46:24.006282"], ["updated_at", "2022-09-14 17:46:24.006282"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.4ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Ice Cream Cake"], ["image", "https://images.leafly.com/flower-images/defaults/purple/strain-19.png"], ["description", "This strain offers sedating effects that leave your mind and body completely relaxed. Ice Cream Cake features a creamy flavor profile with sweet hints of vanilla and sugary dough. This strain is reported by medical marijuana patients and consumers to have calming effects that help with pain, sleep, and anxiety."], ["flower_type", "Indica"], ["created_at", "2022-09-14 17:46:24.007596"], ["updated_at", "2022-09-14 17:46:24.007596"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Slurricane"], ["image", "https://images.leafly.com/flower-images/defaults/purple/strain-23.png"], ["description", "Indica marijuana strain made by crossing Do-Si-Dos with Purple Punch. Slurricane produces relaxing effects that come on slowly."], ["flower_type", "Indica"], ["created_at", "2022-09-14 17:46:24.010429"], ["updated_at", "2022-09-14 17:46:24.010429"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.1ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Kosher Kush"], ["image", "https://leafly-public.imgix.net/strains/reviews/photos/kosher-kush__primary_d1d6.jpg"], ["description", "Known as one of the most odiferous OG Kush-related strains, it has a unique yet familiar smell reminiscent of rich earth and fruit, and is considered by many to be one of the tastiest smokes around. The high experienced is typical of many heavy strains, producing pronounced relaxation and pain relief, with sleep often following close behind."], ["flower_type", "Indica"], ["created_at", "2022-09-14 17:46:24.011982"], ["updated_at", "2022-09-14 17:46:24.011982"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.1ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Zkittlez"], ["image", "https://leafly-public.imgix.net/strains/photos/HIhdYnYSQICmDZpoCnO1_Zkittlez.png"], ["description", "This strain features chunky colas that explode in a spectrum of light green hues and emit a sweet, tropical blend of fruit flavors. The effects of Zkittlez are calming, leaving consumers focused, alert, and happy while relaxing the body to help unwind any time of day."], ["flower_type", "Indica"], ["created_at", "2022-09-14 17:46:24.013250"], ["updated_at", "2022-09-14 17:46:24.013250"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.5ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Strawberry Lemonade"], ["image", "https://images.hytiva.com/Strawberry-Lemonade-B90C.jpg?mw667-mh1000"], ["description", "Strawberry Lemonade stays true to form, exhibiting tangy aromas and flavors coupled with a heady onset and complementary body effects. Enjoy Strawberry Lemonade throughout the day, but don’t plan too far ahead as this strain can be whimsical and intensely relaxing."], ["flower_type", "Sativa"], ["created_at", "2022-09-14 17:46:24.014512"], ["updated_at", "2022-09-14 17:46:24.014512"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "French Cookies"], ["image", "https://images.leafly.com/flower-images/defaults/purple/strain-8.png"], ["description", "French Cookies features a creamy, cookie flavor with just a hint of spice. The aroma of this strain smells like a classic cookies strain, which you'll recognize immediately upon opening your haul. French Cookies has minty green and purple nugs that are covered in trichomes."], ["flower_type", "Sativa"], ["created_at", "2022-09-14 17:46:24.016107"], ["updated_at", "2022-09-14 17:46:24.016107"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Durban Poison"], ["image", "https://images.hytiva.com/Durban-Poison.jpg?mw667-mh1000"], ["description", "Durban Poison is the perfect strain to help you stay productive through a busy day, when exploring the outdoors, or to lend a spark of creativity. Growers and concentrate enthusiasts will both enjoy the over-sized resin glands which make this strain a quality choice for concentrate extraction."], ["flower_type", "Sativa"], ["created_at", "2022-09-14 17:46:24.017484"], ["updated_at", "2022-09-14 17:46:24.017484"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrain Create (0.2ms)[0m  [1m[32mINSERT INTO "strains" ("strain_name", "image", "description", "flower_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["strain_name", "Lemon Meringue"], ["image", "https://images.hytiva.com/Lemon-Meringue.jpg?mw667-mh1000"], ["description", "Lemon Meringue effects offer uplifting and invigorating energy that encourages physical activity. This strain’s subtle motivational qualities and pleasant euphoria make it a go-to for folks combating fatigue, depression, and minor headaches."], ["flower_type", "Sativa"], ["created_at", "2022-09-14 17:46:24.018869"], ["updated_at", "2022-09-14 17:46:24.018869"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 1], ["description", "My all time favorite strain hands down. It's fast acting cerebral effect is amazing because it's always the sweet spot. I use it day and/or night and I have no problem doing activities. I use it for my anxiety and stress. Don't judge by the High THC low CBD ratio. This strain is fantastic if you want to relax."], ["created_at", "2022-09-14 17:46:24.032258"], ["updated_at", "2022-09-14 17:46:24.032258"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (7.0ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (2.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 2], ["description", "Why is marijuana against the law? It grows naturally upon our planet."], ["created_at", "2022-09-14 17:46:24.046601"], ["updated_at", "2022-09-14 17:46:24.046601"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (1.2ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Create (1.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 3], ["description", "It is beautiful to look at, smell, and treats you even better. A dominant strain, this will make you smile and lose track of time and pain while lifting your body."], ["created_at", "2022-09-14 17:46:24.055579"], ["updated_at", "2022-09-14 17:46:24.055579"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (42.9ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 4], ["description", "I first started using marijuana to help me get a good rest for work because I get insomnia from depression and generally a very active imagination. This strain is the best I had for sleep. It drifts me off into a meditative, peaceful and relaxed state. You don't even need to use a lot."], ["created_at", "2022-09-14 17:46:24.105233"], ["updated_at", "2022-09-14 17:46:24.105233"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.2ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 5], ["description", "Provides energy but removes anxiety and lets you relax your nerves and lower your inhibitions at the same time that it heightens sensations. Made me more mindful and improved focus."], ["created_at", "2022-09-14 17:46:24.108836"], ["updated_at", "2022-09-14 17:46:24.108836"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 6], ["description", "Uplifting, this strain would be great during the day when you're awake and motivated to get stuff done, great for energy."], ["created_at", "2022-09-14 17:46:24.112262"], ["updated_at", "2022-09-14 17:46:24.112262"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 7], ["description", "Felt positive, talkative, tasted tropical notes and dulled my nausea symptoms. Can be great for PTSD, anxiety, and aiding in the creative process."], ["created_at", "2022-09-14 17:46:24.115532"], ["updated_at", "2022-09-14 17:46:24.115532"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 8], ["description", "My all time favorite strain hands down. It's fast acting cerebral effect is amazing because it's always the sweet spot. I use it day and/or night and I have no problem doing activities. I use it for my anxiety and stress. Don't judge by the High THC low CBD ratio. This strain is fantastic if you want to relax."], ["created_at", "2022-09-14 17:46:24.118868"], ["updated_at", "2022-09-14 17:46:24.118868"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 9], ["description", "If I could keep one strain in my medicine cabinet, this would be it. Regardless of where my tolerance is, I find fantastic relief from pain (migraines, spine/disc, & nerve pain), nausea and a variety of other chronic symptoms due to dysautonomia."], ["created_at", "2022-09-14 17:46:24.122180"], ["updated_at", "2022-09-14 17:46:24.122180"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 10], ["description", "This weed is bussin"], ["created_at", "2022-09-14 17:46:24.125778"], ["updated_at", "2022-09-14 17:46:24.125778"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 11], ["description", "Perfect High. Didnt make me feel sleepy"], ["created_at", "2022-09-14 17:46:24.130857"], ["updated_at", "2022-09-14 17:46:24.130857"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStrain Load (0.1ms)[0m  [1m[34mSELECT "strains".* FROM "strains" WHERE "strains"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "strain_id", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["strain_id", 12], ["description", "The color on this strain is out of this world"], ["created_at", "2022-09-14 17:46:24.134073"], ["updated_at", "2022-09-14 17:46:24.134073"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/strains" for 127.0.0.1 at 2022-09-14 13:46:29 -0400
+Started GET "/me" for 127.0.0.1 at 2022-09-14 13:46:29 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 1.4ms | ActiveRecord: 7.3ms | Allocations: 8605)
+
+
+  [1m[36mStrain Load (0.4ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.11ms)
+Completed 200 OK in 65ms (Views: 41.1ms | ActiveRecord: 14.7ms | Allocations: 40100)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-09-14 13:46:31 -0400
+Started GET "/me" for 127.0.0.1 at 2022-09-14 13:46:31 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (0.7ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 1.2ms | ActiveRecord: 2.7ms | Allocations: 2679)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.22ms)
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 3.5ms | Allocations: 16356)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-14 13:46:50 -0400
+Started GET "/strains" for 127.0.0.1 at 2022-09-14 13:46:50 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (5.2ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 70ms (Views: 5.2ms | ActiveRecord: 19.6ms | Allocations: 26329)
+
+
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (41.92ms)
+Completed 200 OK in 81ms (Views: 45.8ms | ActiveRecord: 30.0ms | Allocations: 37347)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-14 13:47:05 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"demo1", "password"=>"[FILTERED]", "session"=>{"username"=>"demo1", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 422 Unprocessable Entity in 279ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 3842)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-14 13:47:09 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"demo1", "password"=>"[FILTERED]", "session"=>{"username"=>"demo1", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 422 Unprocessable Entity in 283ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 667)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-14 13:47:15 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"demo1", "password"=>"[FILTERED]", "session"=>{"username"=>"demo1", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo1"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 287ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1138)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-14 13:47:15 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 964)
+
+
+Started GET "/strains" for 127.0.0.1 at 2022-09-14 13:47:20 -0400
+Started GET "/me" for 127.0.0.1 at 2022-09-14 13:47:20 -0400
+Processing by StrainsController#index as */*
+Processing by UsersController#show as */*
+  [1m[36mStrain Load (1.0ms)[0m  [1m[34mSELECT "strains".* FROM "strains"[0m
+  ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (5.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (4.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 2]]
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `authorize'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+Completed 200 OK in 26ms (Views: 1.5ms | ActiveRecord: 13.8ms | Allocations: 3688)
+
+
+[active_model_serializers]   [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 4]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 5]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 6]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (3.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (3.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 9]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 10]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 11]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."strain_id" = $1[0m  [["strain_id", 12]]
+[active_model_serializers]   ↳ app/controllers/strains_controller.rb:9:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (51.77ms)
+Completed 200 OK in 58ms (Views: 31.4ms | ActiveRecord: 26.3ms | Allocations: 16493)
+
+
